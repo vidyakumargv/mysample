@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+    <formset>
+<!-- 
+    <form name="ghhomeRequest">
+            <field
+                property="uname"
+                depends="required">
+                <arg key="ghhomeRequest.uname"/>
+               
+              </field> 
+              <field
+                property="password"
+                depends="required">
+                <arg key="ghhomeRequest.password"/>
+               
+              </field> 
+    </form>
+   -->
+    
+    
+    
+    
+    <form name="regRequest">
+            <field
+                property="name"
+                depends="required,mask">
+                <arg key="regRequest.name"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z ]*$</var-value>
+                </var>
+              </field> 
+               <field
+                property="gender"
+                depends="required,mask">
+                <arg key="regRequest.gender"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z ]*$</var-value>
+                </var>
+              </field> 
+                <field
+                property="day"
+                depends="required,mask">
+                <arg key="regRequest.day"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+              </field>
+                              <field
+                property="month"
+                depends="required,mask">
+                <arg key="regRequest.month"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+              </field>
+                  <field
+                property="year"
+                depends="required,mask">
+                <arg key="regRequest.year"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+              </field>
+              
+              <field
+                property="city"
+                depends="required,mask">
+                <arg key="regRequest.city"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z-]*$</var-value>
+                </var>
+              </field> 
+                <field
+                property="country"
+                depends="required,mask">
+                <arg key="regRequest.country"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z-]*$</var-value>
+                </var>
+              </field> 
+              
+               <field
+                property="phoneno"
+                depends="required,mask,minlength">
+                <arg key="regRequest.phoneno"/>
+                 <arg1 key="regRequest.phoneminlength"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+                 <var>
+                <var-name>minlength</var-name>
+                <var-value>10</var-value>
+                </var>
+                 <var>
+                <var-name>maxlength</var-name>
+                <var-value>11</var-value>
+                </var>
+              </field> 
+              
+               <field
+                property="email"
+                depends="required,email">
+                <arg key="regRequest.email"/>
+                
+              </field> 
+              
+                <field
+                property="username"
+                depends="required,mask">
+                <arg key="regRequest.username"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9-_. ]*$</var-value>
+                </var>
+              </field>
+               <field
+                property="password"
+                depends="required">
+                <arg key="regRequest.password"/>
+                
+              </field>
+              
+               <field
+                property="conpassword"
+                depends="required">
+                <arg key="regRequest.conpassword"/>
+                
+              </field>
+    </form>
+    
+	<!-- 	<form name="skillform">
+            <field
+                property="gname"
+                depends="required,mask">
+                <arg key="skillform.gname"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9_]*$</var-value>
+                </var>
+              </field>   
+              <field
+                property="sgname"
+                depends="required,mask">
+                <arg key="skillform.sgname"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9_]*$</var-value>
+                </var>
+              </field>   
+       <field
+                property="pass1"
+                depends="required,mask">
+                <arg key="l.Pwd"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+            </field>  
+	    </form>              
+	   <form name="watform">
+	   		 <field
+                property="wid"
+                depends="required,mask">
+                <arg key="W.id"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+           <field
+                property="wamt"
+                depends="required,integer">
+                <arg key="W.No"/>
+                </field>
+        </form>      
+        
+           <form name="newsform">
+	   		 <field
+                property="nid"
+                depends="required,mask">
+                <arg key="N.id"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+            <field
+                property="namt"
+                depends="required,integer">
+                <arg key="N.No"/>
+
+            </field>
+        </form>               
+	    
+	    
+           <form name="rentform">
+	   		 <field
+                property="rid"
+                depends="required,mask">
+                <arg key="R.id"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+            <field
+                property="ramt"
+                depends="required,integer">
+                <arg key="R.No"/>
+            </field>
+        </form>               
+	    
+    
+           <form name="powerform">
+	   		 <field
+                property="pid"
+                depends="required,mask">
+                <arg key="P.id"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+            <field
+                property="pamt"
+                depends="required,integer">
+                <arg key="P.No"/>
+                </field>
+        </form>               
+	    
+	    <form name="itemform">
+            <field
+                property="iid"
+                depends="required,mask">
+                <arg key="I.Id"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9_]*$</var-value>
+                </var>
+              </field>     
+            <field
+                property="inam"
+                depends="required,mask">
+                <arg key="I.n"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+            </field>
+            
+            <field
+                property="iamt"
+                depends="required,integer">
+                <arg key="I.No"/>
+                </field>
+  	    </form>           -->   
+  
+  <form  name="fdselectionForm">
+            <field
+                property="transid"
+                depends="required,mask">
+                <arg key="fdselectionForm.transid"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z]*$</var-value>
+                </var>
+              </field>    
+   </form> 
+  <!--          <field
+                property="ln"
+                depends="required,mask">
+                <arg key="m.ln"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z]*$</var-value>
+                </var>
+            </field>
+            <field
+                property="pn"
+                depends="required,mask">
+                <arg key="m.pn"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>
+            <field
+                property="ad"
+                depends="required,mask">
+                <arg key="m.ad"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9-,()]*$</var-value>
+                </var>
+            </field>
+            <field
+                property="pc"
+                depends="required,mask">
+                <arg key="m.pc"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>            		
+            <field
+                property="lg"
+                depends="required,mask">
+                <arg key="m.lg"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9_]*$</var-value>
+                </var>
+              </field>     
+            <field
+                property="ps"
+                depends="required,mask">
+                <arg key="m.ps"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+            </field>
+            
+            <field
+                property="mmn"
+                depends="required,mask">
+                <arg key="m.mmn"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>
+             <field
+                property="em"
+                depends="email">
+                <arg key="m.em"/>
+              </field>
+            
+	    </form>       -->
+	   
+	     
+  <form  name="skillform">
+  
+           <field
+                property="gid"
+                depends="required,mask">
+                <arg key="skillform.gid"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>     
+            <field
+                property="sgid"
+                depends="required,mask">
+                <arg key="skillform.sgid"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>          
+  
+           <field
+                property="gname"
+                depends="required,mask">
+                <arg key="skillform.gname"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z]*$</var-value>
+                </var>
+              </field>    
+            <field
+                property="sgname"
+                depends="required,mask">
+                <arg key="skillform.sgname"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z]*$</var-value>
+                </var>
+            </field>
+         <!--   <field
+                property="upn"
+                depends="required,mask">
+                <arg key="m.pn"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[0-9]*$</var-value>
+                </var>
+            </field>
+            <field
+                property="uad"
+                depends="required,mask">
+                <arg key="m.ad"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9-,()]*$</var-value>
+                </var>
+            </field>   
+           		
+      
+            <field
+                property="uem"
+                depends="email">
+                <arg key="m.em"/>
+              </field>   -->
+            
+	    </form>       
+	   
+	    
+	    
+	<!--      <form name="amtform">
+	   		 <field
+                property="nam"
+                depends="required,mask">
+                <arg key="l.LId"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9_]*$</var-value>
+                </var>
+                </field>    
+            </form>       
+            
+              <form name="remform">
+	   		 <field
+                property="rnam"
+                depends="required,mask">
+                <arg key="l.LId"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9_]*$</var-value>
+                </var>
+                </field>    
+            </form>       
+            
+            
+            
+           <form name="uppsform">
+	   		 <field
+                property="ops"
+                depends="required,mask">
+                <arg key="O.ps"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+            <field
+                property="nps"
+                depends="required,mask">
+                <arg key="N.ps"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+            <field
+                property="rnps"
+                depends="required,mask">
+                <arg key="R.ps"/>
+                <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]*$</var-value>
+                </var>
+                </field>    
+            
+        </form>            -->
+                    
+	    
+	                                         
+	    
+   </formset>
+    
+</form-validation>

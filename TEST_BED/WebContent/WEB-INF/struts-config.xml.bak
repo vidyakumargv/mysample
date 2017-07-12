@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+         
+<struts-config>
+<!-- GET DATA BASE CONNECTION: STANDARED CODE-ONE TIME JOB FOR ENTIRE APPLICATION-->
+<data-sources>
+ <data-source type="org.apache.commons.dbcp.BasicDataSource">
+    <set-property
+      	property="driverClassName"
+     	 value="sun.jdbc.odbc.JdbcOdbcDriver" />
+    <set-property
+      property="url"
+      value="jdbc:odbc:guest" />
+    <set-property
+      property="username"
+      value="guesthouse1" />
+    <set-property
+      property="password"
+      value="guesthouse" />
+   </data-source>
+</data-sources>  
+ 
+
+    <form-beans>
+    
+    <!-- Food Module Start -->
+    
+    	<form-bean
+            name="repform" 
+            type="pack.reports.NamtForm"/>		
+            
+     	<form-bean
+            name="fdrepform" 
+            type="guest.report.fdmastrForm"/>	
+            	
+    	<form-bean
+            name="specificform" 
+            type="guest.report.specificForm"/>
+            	
+    	<form-bean
+            name="kotrepform" 
+            type="guest.report.kotrepForm"/>	
+            
+    	<form-bean
+            name="selectionrepform" 
+            type="GatFood.fdselectionrep.selectionrepForm"/>	
+            
+  		<form-bean
+            name="paymentrepform" 
+            type="guest.report.paymentrepForm"/>	
+            	
+    	<form-bean
+            name="orderrepform" 
+            type="guest.report.orderrepForm"/>	
+            
+     	<form-bean
+            name="fdcolform" 
+            type="guest.report.fdcolForm"/>	
+            	
+    	<form-bean
+            name="fdform" 
+            type="GatFood.FoodMenu.fdmastForm"/>		
+            
+     	<form-bean
+            name="logform" 
+            type="guest.log.LoginForm"/>		
+            
+     	<form-bean
+            name="collForm" 
+            type="guest.book.collmastForm"/>		
+                
+     	<form-bean
+            name="fdorderForm" 
+            type="GatFood.FoodOrdCom.fdorderForm"/>
+            
+      	<form-bean
+            name="fdspecificForm" 
+            type="GatFood.FoodMenu.fdspecificForm"/>
+            
+     	<form-bean
+            name="fdpaymentForm" 
+            type="guest.food.fdpaymentForm"/>
+            
+    	<form-bean
+            name="memfintransForm" 
+            type="guest.food.memfintransForm"/> 
+             
+     	<form-bean
+            name="memfdtransForm" 
+            type="guest.food.memfdtransForm"/>
+            
+     	<form-bean
+            name="fdselectionForm" 
+            type="GatFood.FoodOrdCom.fdselectionForm"/>
+                
+     	<form-bean
+            name="kottransForm" 
+            type="guest.food.kottransForm"/>   
+           
+		<form-bean
+            name="fdserverForm" 
+            type="guest.food.fdserverForm"/>   
+           
+    	<form-bean
+            name="paymentcollectorForm" 
+            type="guest.book.paymentcollectorForm"/>  
+    
+    
+    <!-- Food Module End -->
+    
+ 		<form-bean 
+ 			name="memberloginRequest"  
+ 			type="GatHome.HomeGHHome.MemberLoginFrmFORM"/>
+ 			
+ 		<form-bean
+			name="dlistReq" 
+			type="GatColl.CollDList.DListFrmFORM"/>
+			
+		<form-bean 
+			name="dlmonRep" 
+			type="GatColl.CollDList.DListMonRepFORM"/>
+			
+ 		<form-bean
+			name="dlmomrangeRep" 
+			type="GatColl.CollDList.DListMonRngRepFORM"/>
+			
+ 		<form-bean
+			name="dlistRep" 
+			type="GatColl.CollDList.DListRepFORM"/>
+			
+		<form-bean 
+			name="glistReq" 
+			type="GatColl.CollGList.GListRequestFrmFORM"/>
+			
+		<form-bean 
+			name="glistRep" 
+			type="GatColl.CollGList.GListPresentRepFORM"/>
+			
+ 		<form-bean
+			name="plbankRep" 
+			type="GatColl.CollPList.PListBankRepFORM"/>
+			
+		<form-bean
+			name="plcashRep" 
+			type="GatColl.CollPList.PListCashRepFORM"/>
+			
+	 	<form-bean
+			name="plistReq" 
+			type="GatColl.CollPList.PListRequestFrmFORM"/>
+			
+		<form-bean
+			name="plistRep" 
+			type="GatColl.CollPList.PListRequestRepFORM"/>
+
+		<form-bean 	
+			name="gbookRequest"   
+			type="GatBook.BookFin.GBookingFrmFORM"/>
+
+		<form-bean 
+			name="ghhomeRequest"  
+			type="GatHome.HomeGHHome.GHHomeFrmFORM"/>
+			
+		<form-bean 
+			name="regRequest"  
+			type="GatHome.HomeGHHome.RegisterFrmFORM"/>
+			
+		<form-bean 
+			name="searchRequest"  
+			type="GatHome.HomeGHSearch.GHSearchFrmFORM"/>
+			
+		<form-bean 
+			name="RoomSelectForm" 
+			type="GatBook.BookSearch.RoomSelectFORM"/>
+
+		<form-bean 
+			name="glistReq" 
+			type="GatColl.CollGList.GListRequestFrmFORM"/>
+			
+		<form-bean 
+			name="glistRep" 
+			type="GatColl.CollGList.GListPresentRepFORM"/>
+
+		<form-bean
+			name="plbankRep" 
+			type="GatColl.CollPList.PListBankRepFORM"/>
+			
+		<form-bean
+			name="plcashRep" 
+			type="GatColl.CollPList.PListCashRepFORM"/>
+			
+	 	<form-bean
+			name="plistReq" 
+			type="GatColl.CollPList.PListRequestFrmFORM"/>
+			
+		<form-bean 
+			name="plistRep" 
+			type="GatColl.CollPList.PListRequestRepFORM"/>		     
+
+ 		<form-bean 
+ 			name="myselRequest" 
+ 			type="GatBook.BookSelection.MySelectionRepFORM"/>
+
+		<form-bean 
+			name="gaccbookpart1Request"  
+			type="GatBook.BookConfirm.GuestAccBookPart1FrmFORM"/>
+			
+		<form-bean 
+			name="gaccbookpart2Request"  
+			type="GatBook.BookConfirm.GuestAccBookPart2FrmFORM"/>
+	
+		<form-bean 
+			name="ghdataRequest"  
+			type="GatColl.CollGList.GHDataFrmFORM"/>
+			
+		<form-bean 
+			name="agentRequest"  
+			type="MenuCC.Agent.AGDataFrmFORM"/>
+			
+		<form-bean 
+			name="ordrmcancelRequest"  
+			type="GatCncl.CnclOrdRoom.CancellationOrdRmFrmFORM"/>
+			
+ 		<form-bean 
+ 			name="ordrmcancelReq"  
+ 			type="GatCncl.CnclOrdRoom.CancellationOrdRmRepFORM"/>
+ 			
+ 		<form-bean  
+ 			name="renteegbasicsReq" 
+ 			type="GatBook.BookFin.RenteeGuestBasicsFrmFORM"/>
+ 			
+ 		<form-bean  
+ 			name="fdselectForm" 
+ 			type="GatFood.fdselection.fdselectionForm"/>
+ 			
+ 		<form-bean 
+ 			name=" fdPaymentForm"  
+ 			type="GatFood.fdselection.FoodPaymentForm"/>
+
+    </form-beans>
+
+  <action-mappings>     
+    
+   <!-- Food Module Begin -->
+   
+    	<action
+            path="/fdcolrep"
+            name="fdcolform"
+            scope="request"
+            type="guest.report.fdcolAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/fdcollector.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/fdcolrep.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+  		</action>
+            
+    	<action
+            path="/fdmastrep"
+            name="fdrepform"
+            scope="request"
+            type="guest.report.fdmastAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/foodmastrep.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/fdmastrep.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+   		</action>
+            
+     	<action
+            path="/canceltransrep"
+            name="canceltransform"
+            scope="request"
+            type="guest.report.cancelrepAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/canceltrans.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/canceltransrep.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+    	</action>
+            
+    	<action
+            path="/specificrep"
+            name="specificform"
+            scope="request"
+            type="guest.report.specificAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/specific.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/specificrep.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+    	</action>
+            
+     	<action
+            path="/selectionrep"
+            name="selectionrepform"
+            scope="request"
+            type="GatFood.fdselectionrep.selectionrepAction"
+	        validate="true"
+		    input="/pages/GatFood/fdselectionrep/selection.jsp">
+            <forward name="success" path="/pages/GatFood/fdselectionrep/selectionrep.jsp"/>
+            <forward name="failure" path="/pages/GatFood/fdselectionrep/failure.jsp"/>
+   		</action>
+            
+    	<action
+            path="/paymentrep"
+            name="paymentrepform"
+            scope="request"
+            type="guest.report.paymentrepAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/payment.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/paymentrep.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+     	</action>
+            
+      	<action
+            path="/order"
+            name="orderrepform"
+            scope="request"
+            type="guest.report.orderreprepAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/orderrep.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/order.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+    	</action>
+            
+     	<action
+            path="/kotrep"
+            name="kotrepform"
+            scope="request"
+            type="guest.report.kotrepAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/report/kotrep.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/kotbl.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+     	</action>
+             
+            
+     	<action
+            path="/rep1"
+            name="repform"
+            scope="request"
+            type="pack.reports.NamtAction"
+	           validate="true"
+		    input="/pages/gat/Jsps/report/rep1.jsp">
+            <forward name="success" path="/pages/gat/Jsps/report/frdrep1.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/form/failure.jsp"/>
+    	</action>
+        
+          
+    	<action
+            path="/fdmast"
+            name="fdform"
+            scope="request"
+            type="GatFood.FoodMenu.fdmastAction"
+	        validate="true"
+		    input="/pages/GatFood/FoodMenu/foodmaster.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+    	</action>
+            
+       	<action
+            path="/collmast"
+            name="collForm"
+            scope="request"
+            type="guest.book.collmastAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Food_Catering/collector_master.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+     	</action>
+        
+        <action
+            path="/fdorder"
+            name="fdorderForm"
+            scope="request"
+            type="GatFood.FoodOrdCom.fdorderAction"
+	        validate="true"
+		    input="/pages/GatFood/FoodOrdCom/food_order_trans.jsp">
+            <forward name="success" path="/pages/GatFood/FoodOrdCom/success.jsp"/>
+            <forward name="failure" path="/pages/GatFood/FoodOrdCom/failure.jsp"/>
+       	</action>
+            
+     	<action
+            path="/fdselection"
+            name="fdselectionForm"
+            scope="request"
+            type="GatFood.FoodOrdCom.fdselectionAction"
+	        validate="true"
+		    input="/pages/GatFood/FoodOrdCom/food_selection_trans.jsp">
+            <forward name="success" path="/pages/GatFood/FoodOrdCom/success.jsp"/>
+            <forward name="failure" path="/pages/GatFood/FoodOrdCom/failure.jsp"/>
+     	</action>          
+              
+       	<action
+            path="/fdspecificmast"
+            name="fdspecificForm"
+            scope="request"
+            type="GatFood.FoodMenu.fdspecificAction"
+	        validate="true"
+		    input="/pages/GatFood/FoodMenu/fdspecificmast.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+       	</action> 
+       	
+       	<action
+            path="/fdselection"
+            name="fdselectForm"
+            scope="request"
+            type="GatFood.fdselection.fdselectionAction"
+	        validate="true"
+		    input="/pages/GatFood/fdselection/food_selection_trans.jsp">
+            <forward name="success" path="/pages/GatFood/fdselection/foodPayment.jsp"/>
+            <forward name="failure" path="/pages/GatFood/fdselection/success.jsp"/>
+            <forward name="failure" path="/pages/GatFood/fdselection/failure.jsp"/>
+     	</action> 
+     	
+     	<action
+            path="/fdPayment"
+           	name="fdPaymentForm"
+            scope="request"
+            type="GatFood.fdselection.foodPaymentAction"
+	       	validate="true"
+		    input="/pages/GatFood/fdselection/foodPayment.jsp">
+            <forward name="success" path="/pages/GatFood/fdselection/success.jsp"/>
+   			<forward name="failure" path="/pages/GatFood/fdselection/failure.jsp"/>
+   		</action>
+     	
+      	<action
+            path="/fdpayment"
+            name="fdpaymentForm"
+            scope="request"
+            type="guest.food.fdpaymentAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Food_Catering/fdpayment.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+      	</action>               
+            
+       	<action
+            path="/kottrans"
+            name="kottransForm"
+            scope="request"
+            type="guest.food.kottransAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Food_Catering/kot_trans.jsp">
+		    <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+      	</action>     
+              
+      	<action
+            path="/memfdtrans"
+            name="memfdtransForm"
+            scope="request"
+            type="guest.food.memfdtransAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Food_Catering/memfdtrans.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+     	</action> 
+             
+      	<action
+            path="/memfintrans"
+            name="memfintransForm"
+            scope="request"
+            type="guest.food.memfintransAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Food_Catering/memfintrans.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+      	</action>
+              
+     	<action
+            path="/paymentcollector"
+            name="paymentcollectorForm"
+            scope="request"
+            type="guest.book.paymentcollectorAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Room_Booking/paymentcollector.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+     	</action> 
+     	 
+     	<action
+            path="/fdservercorner"
+            name="fdserverForm"
+            scope="request"
+            type="guest.food.fdserverAction"
+	        validate="true"
+		    input="/pages/gat/Jsps/Food_Catering/fdservercorner.jsp">
+            <forward name="success" path="/pages/gat/Jsps/GHFORMS/success.jsp"/>
+            <forward name="failure" path="/pages/gat/Jsps/GHFORMS/failure.jsp"/>
+    	</action> 
+   
+            <!-- Food Module End -->
+		
+		<action
+			path="/memberlogin"  
+			name="memberloginRequest"
+			scope="request"	
+			type="GatHome.HomeGHHome.MemberLoginFrmACTION"
+			validate="true"					input="/pages/GatHome/HomeGHHome/memberloginFrm.jsp">
+			<forward  name="success"  path="/pages/Menu/MenuCC/menuCC.jsp" />
+			<forward name="failure" path="/pages/GatHome/HomeGHHome/memberloginFrm.jsp"/>
+      	</action>
+      	 
+		<action
+			path="/dlfrm"  
+			name="dlistReq"
+			scope="request"	
+			type="GatColl.CollDList.DListFrmACTION"
+			validate="true"					input="/pages/GatColl/CollDList/dListFrm.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+     	</action>
+     	 
+		<action
+			path="/dlmon"  
+			name="dlmonRep"
+			scope="request"					type="GatColl.CollDList.DListMonRepACTION"
+			validate="true"					input="/pages/GatColl/CollDList/dListMonRep.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+   		</action> 
+		<action
+			path="/dlmrange"  
+			name="dlmomrangeRep"
+			scope="request"					type="GatColl.CollDList.DListMonRngRepACTION"
+			validate="true"					input="/pages/GatColl/CollDList/dListMonRngRep.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+     	</action>
+     	 	
+		<action
+			path="/dlrep"  
+			name="dlistRep"
+			scope="request"					type="GatColl.CollDList.DListRepACTION"
+			validate="true"					input="/pages/GatColl/CollDList/dListRep.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+    	</action> 
+	
+		<action
+			path="/glfrm"  
+			name="glistReq"
+			scope="request"					type="GatColl.CollGList.GListRequestFrmACTION"
+			validate="true"					input="/pages/GatColl/CollGList/gListRequestFrm.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+    	</action> 
+		
+		<action
+			path="/glrep"  
+			name="glistRep"
+			scope="request"					type="GatColl.CollGList.GListPresentRepACTION"
+			validate="true"					input="/pages/GatColl/CollGList/gListPresentRep.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+    	 </action> 
+	
+		<action
+			path="/ghhome"
+			name="ghhomeRequest"  
+			scope="request"					type="GatHome.HomeGHHome.GHHomeFrmACTION"
+			validate="true"			    input="/pages/GatHome/HomeGHHome/hHdefaultFrm.jsp">
+			<forward name="success" path="/pages/GatBook/BookSearch/ghSearchFrm.jsp"/>
+			<forward name="failure" path="/pages/GatHome/HomeGHHome/hHdefaultFrm.jsp"/>
+			<forward name="failurepopup" path="/pages/GatHome/HomeGHHome/userloginFrm.jsp"/>
+			<forward name="successpopup" path="/pages/GatHome/HomeGHHome/logincomplete.jsp"/>			
+    	</action> 
+		 
+		<action  		   
+			input="/pages/GatHome/HomeGHHome/registerFrm.jsp"
+			name="regRequest"
+			path="/reg" 					
+			scope="request"					type="GatHome.HomeGHHome.RegisterFrmACTION"
+			validate="true">					
+			<forward name="success" path="/pages/GatHome/HomeGHHome/registersuccess.jsp"/>
+			<forward name="failure" path="/pages/GatHome/HomeGHHome/failure.jsp"/>
+			<forward name="failurepopup" path="/pages/GatHome/HomeGHHome/registerFrm.jsp"/>
+			<forward name="successpopup" path="/pages/GatHome/HomeGHHome/registersuccess.jsp"/>
+    	</action>
+    	 
+   		<action
+        	input="/pages/GatBook/BookSearch/ghSearchFrm.jsp"
+        	name="searchRequest" path="/ghsearch"  scope="request"				
+			type="GatHome.HomeGHSearch.GHSearchFrmACTION"	validate="true">			
+			<forward name="success" path="/pages/GatHome/HomeGHHome/gsearchsuccess.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+   		</action>
+   		 
+     	<action 		
+         	input="/pages/GatBook/BookSearch/girijaroomlayout.jsp"
+			name="RoomSelectForm"  path="/roomselect"  scope="request"				
+			type="GatBook.BookSearch.RoomSelectACTION"  	validate="true"	>
+			<forward name="success" path="/pages/GatBook/BookFin/gbookingFrm.jsp"/>
+			<forward name="failure" path="/pages/GatBook/BookSearch/girijaa/failure.jsp"/>		
+     	</action>
+     	    
+    	<action
+			attribute="glistReq"
+			input="/pages/GatColl/CollGList/gListRequestFrm.jsp"
+			name="glistReq"
+			path="/glfrm"  					
+			scope="request"	
+			type="GatColl.CollGList.GListRequestFrmACTION"
+			validate="true">
+			<forward name="success" path="/pages/GatColl/CollGList/success.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollGList/failure.jsp"/>
+     	</action> 
+		 
+		<action		
+			attribute="glistRep"
+			input="/pages/GatColl/CollGList/gListPresentRep.jsp"
+			name="glistRep"
+			path="/glrep"  
+			scope="request"			
+			type="GatColl.CollGList.GListPresentRepACTION"
+			validate="true">
+			<forward name="success" path="/pages/GatColl/CollGList/success.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollGList/failure.jsp"/>
+     	</action>
+     	    
+     	<action
+         	input="/pages/GatColl/CollPList/pListRequestFrm.jsp"
+			name="plistReq"
+			path="/plfrm"  
+			scope="request"				
+			type="GatColl.CollPList.PListRequestFrmACTION"
+			validate="true"				>
+			<forward name="pListRequestRep" path="/pages/GatColl/CollPList/pListRequestRep.jsp"/>
+			<forward name="pListCashRep" path="/pages/GatColl/CollPList/pListCashRep.jsp"/>
+			<forward name="pListBankRep" path="/pages/GatColl/CollPList/pListBankRep.jsp"/>
+			<forward name="pListRequestFrm" path="/pages/GatColl/CollPList/pListRequestFrm.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollPList/failure.jsp"/>
+     	</action>    
+                
+   		<action
+        	input="/pages/GatColl/CollPList/pListRequestRep.jsp"
+			name="plistRep"
+			path="/plrep"  
+			scope="request"		
+			type="GatColl.CollPList.PListRequestRepACTION"
+			validate="true"					>
+			<forward name="success" path="/pages/GatColl/CollPList/pListRequestRep.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollPList/failure.jsp"/>
+     	</action> 
+            
+     	<action
+        	input="/pages/GatColl/CollPList/pListCashRep.jsp"
+			name="plcashRep"
+			path="/plcash"  
+			scope="request"			
+			type="GatColl.CollPList.PListCashRepACTION"
+			validate="true"					>
+			<forward name="success" path="/pages/GatColl/CollPList/pListCashRep.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollPList/failure.jsp"/>
+ 		</action> 
+                
+		<action
+			input="/pages/GatColl/CollPList/pListBankRep.jsp"
+			name="plbankRep"
+			path="/plbank"  		scope="request"		
+			type="GatColl.CollPList.PListBankRepACTION"		validate="true"	>
+			<forward name="success" path="/pages/GatColl/CollPList/pListBankRep.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollPList/failure.jsp"/>
+    	</action>  	
+              
+     	<action
+			path="/gbook"  					name="gbookRequest"
+			scope="request"					type="GatBook.BookFin.GBookingFrmACTION"
+			validate="true"					input="/pages/GatBook/BookFin/gbookingFrm.jsp">
+			<forward name="success" path="/pages/GatBook/BookSelection/myselectionsuccess.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+			<forward name="conform" path="/pages/GatBook/BookConfirm/guestAccBookPart1Frm.jsp"/>
+    	</action> 
+            
+     	<action 
+            path="/ghlay"
+            type="org.apache.struts.actions.ForwardAction"
+            parameter="/pages/GatHome/HomeGHHome/gsearchsuccess.jsp"
+            input="/pages/GatBook/BookFin/gbookingFrm.jsp"
+            scope="request"					validate="false">
+     	</action>
+            
+    	<action
+			path="/mysel"  
+			name="myselRequest"				scope="request"	
+			type="GatBook.BookSelection.MySelectionRepACTION"	validate="true"					
+			input="/pages/GatBook/BookSearch/ghSearchFrm.jsp">
+			<forward name="success" path="/pages/GatBook/BookSelection/mySelectionRep.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+			<forward name="bookms" path="/pages/GatBook/BookConfirm/guestAccBookPart1Frm.jsp"/>
+    	</action> 
+
+		<action
+			path="/renteegbasics"  			name="renteegbasicsReq"
+			scope="request"					type="GatBook.BookFin.RenteeGuestBasicsFrmACTION"
+			validate="true"					input="/pages/GatBook/BookFin/renteeguestbasicsFrm.jsp">
+			<forward name="success" path="/success.jsp"/>
+			<forward name="failure" path="/failure.jsp"/>
+    	</action> 
+            
+    	<action
+			path="/ghdatafrm"  				name="ghdataRequest"
+			scope="request"					type="GatColl.CollGList.GHDataFrmACTION"
+			validate="true"					input="/pages/GatColl/CollGList/ghdataFrm.jsp">
+			<forward name="success" path="/pages/GatColl/CollGList/success.jsp"/>
+			<forward name="failure" path="/pages/GatColl/CollGList/failure.jsp"/>
+     	</action>
+     	 
+    	<action
+			path="/agentdatafrm"  			name="agentRequest"
+			scope="request"					type="MenuCC.Agent.AGDataFrmACTION"
+			validate="true"					input="/pages/Menu/MenuCC/Agent/AgentdataFrm.jsp">
+			<forward name="success" path="/pages/Menu/MenuCC/Agent/success.jsp"/>
+			<forward name="failure" path="/pages/Menu/MenuCC/Agent/failure.jsp"/>
+     	</action> 
+            
+		<action
+			path="/ordrmcancelfrm"  		name="ordrmcancelRequest"
+			scope="request"					type="GatCncl.CnclOrdRoom.CancellationOrdRmFrmACTION"
+			validate="true"					input="/pages/GatCncl/CnclOrdRoom/cancellationOrdRmFrm.jsp">
+			<forward name="success" path="/pages/GatCncl/CnclOrdRoom/success.jsp"/>
+			<forward name="failure" path="/pages/GatCncl/CnclOrdRoom/failure.jsp"/>
+     	</action> 
+
+		<action
+			path="/ordrmcnclrep"  			name="ordrmcancelReq"
+			scope="request"					type="GatCncl.CnclOrdRoom.CancellationOrdRmRepACTION"
+			validate="true"					input="pages/GatCncl/CnclOrdRoom/cancellationOrdRmRep.jsp">
+			<forward name="success" path="/pages/GatCncl/CnclOrdRoom/cancellationOrdRmReqRep.jsp"/>
+			<forward name="failure" path="/pages/GatCncl/CnclOrdRoom/failure.jsp"/>
+     	</action> 
+            
+    	<action					
+			path="/gaccbookpart1"  
+			name="gaccbookpart1Request"		scope="session"	
+			type="GatBook.BookConfirm.GuestAccBookPart1FrmACTION"	validate="true"					
+			input="/pages/GatBook/BookConfirm/guestAccBookPart1Frm.jsp">
+			<forward name="success" path="/pages/GatBook/BookConfirm/guestbkConfirm.jsp"/>
+			<forward name="failure" path="/pages/GatBook/BookConfirm/failure.jsp"/>
+     	</action> 
+		   
+		<action
+			path="/gaccbookpart2"  			name="gaccbookpart2Request"
+			scope="session"					type="GatBook.BookConfirm.GuestAccBookPart2FrmACTION"
+			validate="true"					input="/pages/GatBook/BookConfirm/guestAccBookPart2Frm.jsp">
+			<forward name="success" path="/pages/GatBook/BookFin/renteeguestbasicsFrm.jsp"/><!-- renteeguestbasicsFrm.jsp -->
+			<forward name="failure" path="/pages/GatBook/BookConfirm/failure.jsp"/>
+   		</action> 
+            
+     	<action     					 
+			path="/gaccbkpartBeforePart2"  	name="gaccbookpart2Request"
+			scope="session"					type="GatBook.BookConfirm.GuestAccBookPart2FrmACTION"
+			validate="true"					input="/pages/GatBook/BookConfirm/guestAccBookBeforePart2Frm.jsp">
+			<forward name="success" path="/pages/GatBook/BookConfirm/bridge.jsp"/>
+			<forward name="failure" path="/pages/GatBook/BookConfirm/failure.jsp"/>
+    	</action> 
+                
+     	<action     					 
+			path="/confirmedpage"
+			name="gaccbookpart2Request"		scope="request"			
+			input="/pages/GatBook/BookConfirm/guestbkConfirm.jsp">
+     	</action> 
+            
+  </action-mappings>
+ <!-- GET MESSAGE RESOURCE  -->   
+<message-resources parameter="ApplicationResources"/>
+
+ <!-- VALIDATOR CONFIGURATION: STANDARED CODE-ONE TIME JOB FOR ENTIRE APPLICATION -->
+<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  <set-property property="pathnames"
+                  value="/WEB-INF/validator-rules.xml,
+                         /WEB-INF/validation.xml"/>
+</plug-in>
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+  <set-property property="definitions-config"
+                   value="/WEB-INF/tiles-defs.xml"/>
+</plug-in>
+</struts-config>
+

@@ -1,0 +1,246 @@
+﻿<html>
+<style>
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    padding: 4px;
+}
+</style>
+
+<title>testFrmnRpt4BLG.jsp</title>
+<body>
+<!--include jquery + javascript handler to dynamicaly change the contet based on ajax replay-->
+<!--
+
+sample jquery functions
+selection part:
+
+function onLoad : show clIds
+function onSelectClId: show smId
+function onSelectSmId: show sLnoFrom;
+function onSelectSLnoFrom: show sLNoTo
+function onSelectSLnoTo: show testDAO table content
+
+Test result part:
+
+function onClickRunQuery : show Results
+function onClickCompareWithDB : show validated test result 
+-->
+
+<!--include jsp tag libraries-->
+
+<!--Form selection------------------------->
+<form>
+
+<h4>Make the selections</h4>
+
+<!--Form selection item option display-->
+<table>
+<tr>
+<!--on load of page call form action='testDAO' method='getClId'-->
+<td>
+ClId: 
+<select>
+  <option value="girijaa">girijaa</option>
+  <option value="shoba">shoba</option>
+</select>
+</td>
+<!-- on select of ClId call form action='testDAO' method='getSmId'-->
+</tr>
+
+<tr>
+<td>
+SmId: 
+<select>
+  <option value="girijaa">Opr</option>
+  <option value="shoba">Req</option>
+</select>
+</td>
+<!-- on select of SmId call form action='testDAO' method='getSlNo'-->
+</tr>
+
+
+<tr>
+<td>
+Method Return Type 
+<select>
+  <option value="girijaa">Session</option>
+  <option value="shoba">Bean</option>
+</select>
+</td>
+
+</tr>
+
+<tr>
+<td>
+From SL.NO
+<select>
+  <option value="girijaa">2</option>
+  <option value="shoba">4</option>
+</select>
+</td>
+
+<td>
+To SL.NO
+<select>
+  <option value="girijaa">2</option>
+  <option value="shoba">4</option>
+</select>
+</td>
+<!-- on select of To SL.NO call form action='testDAO' method='getTestDAO'-->
+</tr>
+<table>
+
+<!--Form selected item display-->
+<h4>Showing selected Items list below:</h4>
+
+<table>
+<thead>
+<th>slNo</th>	
+<th>reqtId</th>	
+<th>condId</th>	
+<th>subCondId</th>	
+<th>logicId</th>	
+<th>fnId</th>	
+<th>fnDet</th>
+<th>method return type</th>
+<th>method signature</th>
+<th>method body</th>
+</thead>
+
+<!--use jsp loop or jstl tag library to dynamically display content based on Ajax replay-->
+
+<tr>
+<td>2</td>
+<td>snkReqICDOff1</td>
+<td>condICDoff1ReqExist</td>
+<td>condICDoff1ValOpClStatusSatisfied</td>
+<td>cmpf2</td>
+<td>cTinSTE</td>
+<td>EVAL: current or run time in well within start and end time specified</td>
+<td>boolean</td>
+<td>cTinSTE(HashMap offGetStET_HashObj)</td>
+<td><textarea name="Text1" cols="40" rows="3">
+BasicLogicBLG bl=new BasicLogicBLG();
+return bl.CTinSTE(offGetStET_HashObj);
+			
+			</textarea>
+			</td>
+</tr>
+</table>
+<!--loop or jstl tag close-->
+
+<!--Form Buttons-->
+<br>
+<table>
+<tr>
+<td>
+<button type="submit">Prepare Class</button>
+</td>
+<td>
+<button type="submit">Compile</button>
+</td>
+<td>
+<button type="submit">Build</button>
+</td>
+<td>
+<button type="submit">Deploy</button>
+</td>
+<td>
+<button type="submit">Run</button>
+</td>
+<td>
+<button type="submit">Debug</button>
+</td>
+<td>
+<button type="submit">Pause</button>
+</td>
+<td>
+<button type="submit">Stop</button>
+</td>
+<td>
+<button type="submit">Cancel</button>
+</td>
+</tr>
+</table>
+</form>
+
+<!--Report section----------------------------->
+<form>
+
+<!--Report Results-->
+<h4>Showing Test Results: Tested at the server</h4>
+
+<table>
+<thead>
+<th>clId</th>
+<th>smId</th>	
+<th>reqId</th>	
+<th>condId</th>	
+<th>subCondId</th>
+<th>logicId</th>	
+<th>fnId</th>
+<th>fnDet</th>
+<th>method return type</th>
+<th>method signature</th>
+<th>method body</th>
+<th>objName (session hash / Bean)</th>	
+<th>Name</th>	
+<th>value</th>
+<th>Test result</th>
+</thead>
+<!--use jsp loop/tag library to dynamically display content based on Ajax replay-->
+
+<tr>
+<td>Girijaa</td>
+<td>Opr</td>
+<td>snkReqICDOff1</td>
+<td>condICDoff1ReqExist</td>
+<td>condICDoff1ValOpClStatusSatisfied</td>
+<td>cmpf2</td>
+<td>cTinSTE</td>
+<td>EVAL: current or run time in well within start and end time specified</td>
+<td>boolean</td>
+<td>cTinSTE(HashMap offGetStET_HashObj)</td>
+<td>	  BasicLogicBLG bl=new BasicLogicBLG();
+	  
+	  return bl.CTinSTE(offGetStET_HashObj);
+			</td>
+<td>cTinSTE</td>
+<td>CTinSTE_boolean</td>
+<td>true</td>
+<td><input type="checkbox" name="" value=""></td>
+</tr>
+<!--jsp loop/tag close-->
+</table>
+
+<!--Report Buttons-->
+<br>
+<table>
+<tr>
+<td>
+<button type="submit">Compare to db</button>
+</td>
+<td>
+<button type="submit">Commit</button>
+</td>
+<td>
+<button type="submit">Exit</button>
+</td>
+<td>
+<button type="submit">Cancel</button>
+</td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>
